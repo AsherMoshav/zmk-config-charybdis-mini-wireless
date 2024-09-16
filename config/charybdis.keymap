@@ -7,6 +7,9 @@
 
 #define U_TAPPING_TERM 200
 
+#define U_MACRO_VA_ARGS(macro, ...) macro(__VA_ARGS__)
+#define U_STRINGIFY(x) #x
+
 #define U_MT(MOD, TAP) &u_mt MOD TAP
 #define U_LT(LAYER, TAP) &u_lt LAYER TAP
 
