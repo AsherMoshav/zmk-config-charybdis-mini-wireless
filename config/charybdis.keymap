@@ -10,6 +10,10 @@
 #define U_MACRO_VA_ARGS(macro, ...) macro(__VA_ARGS__)
 #define U_STRINGIFY(x) #x
 
+#define U_NP &none // key is not present
+#define U_NA &none // present but not available for use
+#define U_NU &none // available but not used
+
 #define U_MT(MOD, TAP) &u_mt MOD TAP
 #define U_LT(LAYER, TAP) &u_lt LAYER TAP
 
@@ -21,6 +25,7 @@
 #define U_MEDIA  5
 #define U_MOUSE  6
 #define U_SCROLL  7
+#define U_CODE  8
 
 #define U_MACRO(name,...) \
 / { \
@@ -239,6 +244,14 @@ U_LT(U_MEDIA, ESC)    &kp Z             &kp X             &kp C          &kp V  
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+            >;
+        };
+        CODE {
+            bindings = <
+&trans  &email  &beeri_email  &phone  &id_number  &trans    &trans  &trans  &trans  &vim_quit_all             &vim_quit  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &arrow            &vim_save  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans
             >;
