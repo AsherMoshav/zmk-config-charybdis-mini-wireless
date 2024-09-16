@@ -18,6 +18,18 @@
 #define U_MEDIA  5
 #define U_MOUSE  6
 
+#define U_MACRO(name,...) \
+/ { \
+  macros { \
+    name: name { \
+      label = U_STRINGIFY(ZM_ ## name); \
+      compatible = "zmk,behavior-macro"; \
+      #binding-cells = <0>; \
+      __VA_ARGS__ \
+    }; \
+  }; \
+};
+
 #define MIRYOKU_SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
 / { \
   behaviors { \
@@ -175,12 +187,12 @@ MIRYOKU_SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
             >;
         };
 
-        SYMNUM {
+        SYM {
             bindings = <
-&bt BT_CLR  &kp EXCL      &kp AT       &kp HASH    &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS                 &kp KP_MULTIPLY   &kp LPAR              &kp RPAR              &kp DEL
-&trans      &trans        &bt BT_PRV   &bt BT_NXT  &trans    &trans       &kp UNDER  &u_mt RIGHT_SHIFT EQUAL  &u_mt RCTRL LBKT  &u_mt RIGHT_ALT RBKT  &u_mt RIGHT_GUI BSLH  &kp GRAVE
-&trans      &out OUT_TOG  &bootloader  &trans      &trans    &trans       &kp MINUS  &kp PLUS                 &kp LBRC          &kp RBRC              &kp PIPE              &kp TILDE
-                                       &trans      &trans    &mo 3        &trans     &trans
+&trans  &kp LBRC      &kp AMPS       &kp ASTRK    &kp LPAR  &kp RBRC           &trans  &trans                 &trans   &trans              &trans &trans
+&trans      &kp COLON        &kp DLLR   &kp PRCNT  &kp CARET    &kp PLUS       &trans  &trans  &u_mt RCTRL LBKT  &trans  &trans &trans
+&trans      &kp TILDE  &kp EXCL  &kp AT      &kp HASH    &kp PIPE              &trans  &trans                 &trans          &trans              &trans              &trans
+                               &kp LPAR      &kp RPAR    &kp UNDER             &trans     &trans
             >;
         };
 
