@@ -260,6 +260,14 @@ MIRYOKU_SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
     };
+u_ltms: u_ltms {
+      compatible = "zmk,behavior-hold-tap";
+      label = "u_ltms";
+      #binding-cells = <2>;
+      tapping_term_ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&mkp>;
+    };
     u_ltm: u_ltm {
       compatible = "zmk,behavior-hold-tap";
       label = "u_ltm";
@@ -293,7 +301,7 @@ MIRYOKU_SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
         BASE {
             bindings = <
 &kp ESC  &kp Q             &kp W             &kp E          &kp R               &kp T    &kp Y  &kp U               &kp I          &kp O              &kp P                 &kp BSPC
-&kp TAB  &u_mt LEFT_GUI A  &u_mt LEFT_ALT S  &u_mt LCTRL D  &u_mt LEFT_SHIFT F  &kp G    &kp H  &u_mt LEFT_SHIFT J  &u_mt RCTRL K  &u_mt RIGHT_ALT L  &u_mt RIGHT_GUI SQT  &kp APOS
+U_LT(U_MOUSE, TAB)  &u_mt LEFT_GUI A  &u_mt LEFT_ALT S  &u_mt LCTRL D  &u_mt LEFT_SHIFT F  &kp G    &kp H  &u_mt LEFT_SHIFT J  &u_mt RCTRL K  &u_mt RIGHT_ALT L  &u_mt RIGHT_GUI SQT  &kp APOS
 U_LT(U_MEDIA, ESC)    &kp Z             &kp X             &kp C          &kp V               &kp B    &kp N  &kp M               &kp COMMA      &kp DOT            &kp SLASH              U_LT(U_FUNC, DEL)
                                              U_LT(U_SCROLL, ESC)       U_LT(U_NAV, SPACE)           U_LT(U_CODE, TAB)    U_LT(U_SYM, RET)  U_LT(U_NUM, BSPC)
             >;
@@ -349,7 +357,7 @@ U_LT(U_MEDIA, ESC)    &kp Z             &kp X             &kp C          &kp V  
 &trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &mkp LCLK  &mkp RCLK    &trans  &trans
+                        &trans  &mkp LCLK  &u_ltms U_CODE RCLK    &trans  &trans
             >;
         };
         SCROLL {
