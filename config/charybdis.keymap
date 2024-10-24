@@ -354,8 +354,8 @@ U_LT(U_MEDIA, ESC)    &kp Z             &kp X             &kp C          &kp V  
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &mkp MB4     &mkp MB5  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&mkp MB4  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&mkp MB5  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &mkp LCLK  &u_ltms U_CODE RCLK    &trans  &trans
             >;
